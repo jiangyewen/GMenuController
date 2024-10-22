@@ -53,6 +53,12 @@
  */
 @property (nonatomic, strong) UIFont * menuItemFont;
 
+//每个menuItem指定给定的相等宽
+@property (nonatomic, assign) CGFloat menuItemFixWidth;
+
+//每个menuItem分割线颜色
+@property (nonatomic, strong) UIColor *menuItemLineColor;
+
 /**
  menuItemColor Default:whiteColor
  */

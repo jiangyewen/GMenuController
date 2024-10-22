@@ -196,7 +196,12 @@ static inline BOOL GMenuHasContainingInRange(CGFloat index,NSRange range) {
     NSUInteger itemsCount = array.count;
     [array enumerateObjectsUsingBlock:^(GMenuItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGFloat maxWidth = ((idx+1)==itemsCount)? self.maxSize.width : self.maxSize.width-kMoreWidth;
-        CGFloat itemW = [ws calculateTextSize:obj maxWidth:maxWidth].width + kTitleMargin*2;
+        CGFloat itemW = 0;
+        if (self.container.menuItemFixWidth > 0) {
+            itemW = self.container.menuItemFixWidth;
+        } else {
+            [ws calculateTextSize:obj maxWidth:maxWidth].width + kTitleMargin*2;
+        }
         if (obj.image && (self.container.imagePosition == GAdjustButtonIMGPositionLeft || self.container.imagePosition == GAdjustButtonIMGPositionRight)) {
              GMenuItemDefaultView *test = [GMenuItemDefaultView buttonWithType:UIButtonTypeCustom];
              [test setImage:obj.image forState:UIControlStateNormal];
@@ -224,7 +229,8 @@ static inline BOOL GMenuHasContainingInRange(CGFloat index,NSRange range) {
                 
                 if (idx != 0) {
                     UIView *line = [UIView new];
-                    line.backgroundColor =   self.menuTintColor ?:[UIColor whiteColor];
+                    UIColor *bgColor = self.container.menuItemLineColor ?: self.menuTintColor;
+                    line.backgroundColor =  bgColor ?:[UIColor whiteColor];
                     [self addSubview:line];
                     line.frame = CGRectMake(totalWidth, 0, 1/[UIScreen mainScreen].scale, self.maxSize.height-_arrowSize.height);
                     [self.lines addObject:line];
@@ -253,7 +259,8 @@ static inline BOOL GMenuHasContainingInRange(CGFloat index,NSRange range) {
             
             if (idx != 0) {
                 UIView *line = [UIView new];
-                line.backgroundColor =   self.menuTintColor?:[UIColor whiteColor];
+                UIColor *bgColor = self.container.menuItemLineColor ?: self.menuTintColor;
+                line.backgroundColor =  bgColor ?:[UIColor whiteColor];
                 [self addSubview:line];
                 line.frame = CGRectMake(totalWidth-itemW, 0, 1/[UIScreen mainScreen].scale, self.maxSize.height-_arrowSize.height);
                 [self.lines addObject:line];
@@ -297,7 +304,8 @@ static inline BOOL GMenuHasContainingInRange(CGFloat index,NSRange range) {
         moreleft.highlightedColor = self.container.menuItemHighlightColor;
         
         UIView *line = [UIView new];
-        line.backgroundColor =   self.menuTintColor?: [UIColor whiteColor];
+        UIColor *bgColor = self.container.menuItemLineColor ?: self.menuTintColor;
+        line.backgroundColor =  bgColor ?:[UIColor whiteColor];
         [self addSubview:line];
         line.frame = CGRectMake(kMoreWidth, 0, 1/[UIScreen mainScreen].scale, self.maxSize.height-_arrowSize.height);
         [self.lines addObject:line];
@@ -309,7 +317,12 @@ static inline BOOL GMenuHasContainingInRange(CGFloat index,NSRange range) {
     
     [array enumerateObjectsUsingBlock:^(GMenuItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGFloat maxWidth = (self.maxSize.width-kMoreWidth*2);
-        CGFloat itemW = [ws calculateTextSize:obj maxWidth:maxWidth].width + kTitleMargin*2;
+        CGFloat itemW = 0;
+        if (self.container.menuItemFixWidth > 0) {
+            itemW = self.container.menuItemFixWidth;
+        } else {
+            [ws calculateTextSize:obj maxWidth:maxWidth].width + kTitleMargin*2;
+        }
         if (obj.image && (self.container.imagePosition == GAdjustButtonIMGPositionLeft || self.container.imagePosition == GAdjustButtonIMGPositionRight)) {
             GMenuItemDefaultView *test = [GMenuItemDefaultView buttonWithType:UIButtonTypeCustom];
             [test setImage:obj.image forState:UIControlStateNormal];
@@ -366,7 +379,8 @@ static inline BOOL GMenuHasContainingInRange(CGFloat index,NSRange range) {
         
         if (idx != 0) {
             UIView *line = [UIView new];
-            line.backgroundColor =  self.menuTintColor?: [UIColor whiteColor];
+            UIColor *bgColor = self.container.menuItemLineColor ?: self.menuTintColor;
+            line.backgroundColor =  bgColor ?:[UIColor whiteColor];
             [self addSubview:line];
             line.frame = CGRectMake(lastWidth-itemW, 0, 1/[UIScreen mainScreen].scale, self.maxSize.height-_arrowSize.height);
             [self.lines addObject:line];
@@ -393,7 +407,8 @@ static inline BOOL GMenuHasContainingInRange(CGFloat index,NSRange range) {
         
         
         UIView *line = [UIView new];
-        line.backgroundColor =   self.menuTintColor?:[UIColor whiteColor];
+        UIColor *bgColor = self.container.menuItemLineColor ?: self.menuTintColor;
+        line.backgroundColor =  bgColor ?:[UIColor whiteColor];
         [self addSubview:line];
         line.frame = CGRectMake(self.frame.size.width-kMoreWidth, 0, 1/[UIScreen mainScreen].scale,self.maxSize.height-_arrowSize.height);
         [self.lines addObject:line];
