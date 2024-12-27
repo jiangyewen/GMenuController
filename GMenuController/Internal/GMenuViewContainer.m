@@ -226,7 +226,7 @@ static inline CGPoint GMenuGetXCenter(CGRect rect) {
     if (self.menuView.superview) {
         [self.menuView removeFromSuperview];
     }
-    self.menuView = [GMenuDefaultView defaultView:self WithMenuItems:_menuItems MaxSize:CGSizeMake(_maxMenuViewWidth-_menuEdgeInset.left-_menuEdgeInset.right, _menuViewHeight) arrowSize:_arrowSize AnchorPoint:CGPointZero];
+    self.menuView = [LSMenuView defaultView:self WithMenuItems:_menuItems MaxSize:CGSizeMake(_maxMenuViewWidth-_menuEdgeInset.left-_menuEdgeInset.right, _menuViewHeight) arrowSize:_arrowSize AnchorPoint:CGPointZero];
     [self addSubview:self.menuView];
     CGRect menuRect = self.menuView.frame;
     //    menuRect.size.height += _arrowSize.height;

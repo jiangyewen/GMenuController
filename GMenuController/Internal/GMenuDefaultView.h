@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "GMenuControllerHeader.h"
+#import "GAdjustButton.h"
 @class GMenuItem,GMenuViewContainer;
+
+@interface GMenuItemDefaultView: GAdjustButton
+@property (nonatomic, strong) UIColor  *highlightedColor;
+@property (nonatomic, strong) UIImageView  *effectView;
+@end
+
 @interface GMenuDefaultView : UIView
 @property (nonatomic, strong) NSArray<GMenuItem*>* menuItems;
 @property (nonatomic, assign) CGSize  maxSize;

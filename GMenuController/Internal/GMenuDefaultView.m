@@ -12,10 +12,6 @@
 #import "GAdjustButton.h"
 #import "GMenuController_internal.h"
 
-@interface GMenuItemDefaultView:GAdjustButton
-@property (nonatomic, strong) UIColor  *highlightedColor;
-@property (nonatomic, strong) UIImageView  *effectView;
-@end
 @implementation GMenuItemDefaultView
 
 - (instancetype)initWithFrame:(CGRect)frame

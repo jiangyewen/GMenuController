@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GMenuDefaultView.h"
+#import "LSMenuView.h"
 #import "GAdjustButton.h"
 
 @interface GMenuViewContainer : UIView
@@ -20,7 +20,7 @@
 /**
  menuView
  */
-@property(nonatomic, strong) GMenuDefaultView *menuView;
+@property(nonatomic, strong) LSMenuView *menuView;
 
 /**
  menuView 填充颜色 Defulat:[UIColor colorWithRed:26/255 green:26/288 blue:27/255 alpha:1]

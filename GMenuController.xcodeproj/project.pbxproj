@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01933CDF2D1E883600D9225A /* LSMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01933CDD2D1E883600D9225A /* LSMenuView.h */; };
+		01933CE02D1E883600D9225A /* LSMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01933CDE2D1E883600D9225A /* LSMenuView.m */; };
 		153D51662373F5CF009B9653 /* GMenuController_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 153D51652373F5CF009B9653 /* GMenuController_internal.h */; };
 		153D51672373F6E8009B9653 /* GMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0203E1F8E56BA00D4A5CA /* GMenuController.m */; };
 		153D51682373F6E8009B9653 /* GAdjustButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0893321F98912D0073946D /* GAdjustButton.m */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01933CDD2D1E883600D9225A /* LSMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSMenuView.h; sourceTree = "<group>"; };
+		01933CDE2D1E883600D9225A /* LSMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSMenuView.m; sourceTree = "<group>"; };
 		153D515D2373F497009B9653 /* GMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		153D51652373F5CF009B9653 /* GMenuController_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMenuController_internal.h; sourceTree = "<group>"; };
 		2B0893321F98912D0073946D /* GAdjustButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAdjustButton.m; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				2B0893331F98912D0073946D /* GAdjustButton.h */,
 				2B0893321F98912D0073946D /* GAdjustButton.m */,
 				153D51652373F5CF009B9653 /* GMenuController_internal.h */,
+				01933CDD2D1E883600D9225A /* LSMenuView.h */,
+				01933CDE2D1E883600D9225A /* LSMenuView.m */,
 				2BF020401F8E56BA00D4A5CA /* GMenuDefaultView.h */,
 				2BF020411F8E56BA00D4A5CA /* GMenuDefaultView.m */,
 				2BF020421F8E56BA00D4A5CA /* GMenuEffectsWindow.h */,
@@ -109,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				153D51752373F868009B9653 /* GMenuController.h in Headers */,
+				01933CDF2D1E883600D9225A /* LSMenuView.h in Headers */,
 				153D51762373F868009B9653 /* GMenuControllerHeader.h in Headers */,
 				153D517A2373F868009B9653 /* GMenuViewContainer.h in Headers */,
 				153D51782373F868009B9653 /* GMenuDefaultView.h in Headers */,
@@ -192,6 +199,7 @@
 				153D51682373F6E8009B9653 /* GAdjustButton.m in Sources */,
 				153D51692373F6E8009B9653 /* GMenuDefaultView.m in Sources */,
 				153D516A2373F6E8009B9653 /* GMenuEffectsWindow.m in Sources */,
+				01933CE02D1E883600D9225A /* LSMenuView.m in Sources */,
 				153D516B2373F6E8009B9653 /* GMenuViewContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
