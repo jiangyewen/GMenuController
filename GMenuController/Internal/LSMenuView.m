@@ -61,7 +61,7 @@
 
     NSArray *array = self.menuItems;
     NSUInteger itemsCount = array.count;
-    NSInteger countPerLine = 3;
+    NSInteger countPerLine = 4;
     CGFloat itemW = 70;
     CGFloat itemH = 64;
 
@@ -69,7 +69,7 @@
         itemW = self.container.menuItemFixWidth;
     }
 
-    CGFloat totalWidth = MIN(3, itemsCount) * itemW;
+    CGFloat totalWidth = MIN(countPerLine, itemsCount) * itemW;
     CGFloat totalHeight = ceil(itemsCount * 1.0 / countPerLine) * itemH;
 
     [array enumerateObjectsUsingBlock:^(GMenuItem *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
